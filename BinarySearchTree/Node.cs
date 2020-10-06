@@ -9,14 +9,10 @@ namespace BinarySearchTree
 {
     class Node
     {
-        public int data;
-        public Node right;
-        public Node left;
+        public int data { get; set;  }
+        public Node rightNode { get; set; } 
+        public Node leftNode { get; set;  } 
 
-        public Node(int data)
-        {
-            this.data = data;
-            
-        }
+        
     }
 }
