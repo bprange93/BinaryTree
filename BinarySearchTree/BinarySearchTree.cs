@@ -52,7 +52,7 @@ namespace BinarySearchTree
         }
         public Node Search(int value)
         {
-            return value(this.root);
+            return this.Search(value);
         }
     }
 }
