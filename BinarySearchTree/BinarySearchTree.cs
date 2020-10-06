@@ -50,11 +50,12 @@ namespace BinarySearchTree
             return true;
 
         }
-        //public Node Search(int value)
-        //{
-        //    return this.Search(value, this.root);
-        //}
-        public Node Search(int value, Node parent)
+        public Node Search(int value)
+        {
+            return this.Search(value);
+            
+        }
+        private Node Search(int value, Node parent)
         {
             if(parent != null)
             {

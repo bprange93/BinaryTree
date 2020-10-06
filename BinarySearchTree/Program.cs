@@ -16,7 +16,7 @@ namespace BinarySearchTree
             binaryTree.Add(40);
             binaryTree.Add(60);
 
-            //Node node = binaryTree.Search(50);
+            Node node = binaryTree.Search(40);
             
 
             //Console.WriteLine(binaryTree.root);
