@@ -9,22 +9,22 @@ namespace BinarySearchTree
     class BinarySearchTree : Node
     {
         //member variable
-        public Node root { get; set;  }
+        Node Root;
 
         //constructor
-        public BinarySearchTree()
+        public BinarySearchTree(int data)
         {
-            root = null;
+            Root = new Node(data);
         }
 
         //member method
         public bool Add(int value)
         {
-            Node before = null, after = this.root;
+            Node after = this.Root;
             
             while(after != null)
             {
-                before = after;
+                Node before = after;
                 if (value < after.data)
                     after = after.leftNode;
                 else if (value > after.data)
@@ -36,8 +36,8 @@ namespace BinarySearchTree
                 Node newNode = new Node();
                 newNode.data = value;
 
-                if (this.root == null)
-                    this.root = newNode;
+                if (this.Root == null)
+                    this.Root = newNode;
                 else
                 {
                     if (value < before.data)
@@ -50,9 +50,21 @@ namespace BinarySearchTree
             return true;
 
         }
-        public Node Search(int value)
+        //public Node Search(int value)
+        //{
+        //    return this.Search(value, this.root);
+        //}
+        public Node Search(int value, Node parent)
         {
-            return this.Search(value);
+            if(parent != null)
+            {
+                if (value == parent.data) return parent;
+                if (value < parent.data)
+                    return Search(value, parent.leftNode);
+                else
+                    return Search(value, parent.rightNode);
+            }
+            return null;
         }
     }
 }

@@ -7,12 +7,17 @@ using System.Threading.Tasks;
 
 namespace BinarySearchTree
 {
-    class Node
+    public class Node
     {
-        public int data { get; set;  }
-        public Node rightNode { get; set; } 
-        public Node leftNode { get; set;  } 
+        public int data;
+        public Node rightNode;
+        public Node leftNode; 
 
-        
+        public Node()
+        { }
+        public Node(int data)
+        {
+            this.data = data;
+        }
     }
 }
