@@ -25,45 +25,46 @@ namespace BinarySearchTree
             while(after != null)
             {
                 Node before = after;
-                if (value < after.data)
-                    after = after.leftNode;
-                else if (value > after.data)
-                    after = after.rightNode;
+                if (value < after.Data)
+                    after = after.LeftNode;
+                else if (value > after.Data)
+                    after = after.RightNode;
                 else
                 {
                     return false;
                 }
                 Node newNode = new Node();
-                newNode.data = value;
+                newNode.Data = value;
 
                 if (this.Root == null)
                     this.Root = newNode;
                 else
                 {
-                    if (value < before.data)
-                        before.leftNode = newNode;
+                    if (value < before.Data)
+                        before.LeftNode = newNode;
                     else
-                        before.rightNode = newNode;
+                        before.RightNode = newNode;
                 }
                 
             }
             return true;
 
         }
-        public Node Search(int value)
+        public string Search(int searchValue)
         {
-            return this.Search(value);
+            return this.Search(searchValue);
             
         }
-        private Node Search(int value, Node parent)
+        
+        private string Search(int value, Node parent)
         {
             if(parent != null)
             {
-                if (value == parent.data) return parent;
-                if (value < parent.data)
-                    return Search(value, parent.leftNode);
+                if (value == parent.Data) return parent;
+                if (value < parent.Data)
+                    return Search(value, parent.LeftNode);
                 else
-                    return Search(value, parent.rightNode);
+                    return Search(value, parent.RightNode);
             }
             return null;
         }
